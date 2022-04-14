@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @:<b>Enter Your Present Address</b><br />
+    @:Enter Your City Name <input type="text" name="Present.CityName" /><br />
+    @:Enter Your State Name <input type="text" name="Present.StateName" /><br />
+    @:Enter Your Country Name <input type="text" name="Present.CountryName" /><br /><br /><br />
+
+    @:<b>Enter Your Permanent Address</b><br />
+    @:Enter Your City Name <input type="text" name="Permanent.CityName" /><br />
+    @:Enter Your State Name <input type="text" name="Permanent.StateName" /><br />
+    @:Enter Your Country Name <input type="text" name="Permanent.CountryName" /><br />
+
+    <input type="submit" value="Submit" />
+}

@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*1. Using AJAX Action Link*@
+
+@Ajax.ActionLink("Click Here to Get Date","GetCurrentDate","AJAXActionLink",
+                                            new AjaxOptions
+                                            {
+                                                UpdateTargetId = "showCurrentDate",
+                                                InsertionMode = InsertionMode.Replace,
+                                                HttpMethod = "Get",
+                                                LoadingElementId="waitForCurrentDate"
+                                            })
+
+<div id="showCurrentDate"></div>
+
+<div id="waitForCurrentDate" style="display:none; border:none; margin:auto;">
+    Please Wait Your Date is Processing !!!!
+</div>
+
+@*2. Using Callback Functions*@
+
+@Ajax.ActionLink("Click Here to Show Date","GetCurrentDate","AJAXActionLink",
+                                                        new AjaxOptions
+                                                        {
+                                                            UpdateTargetId="showCurrentDate",
+                                                            InsertionMode=InsertionMode.Replace,
+                                                            HttpMethod="Get",
+                                                            OnBegin="Begin",
+                                                            OnComplete="Complete",
+                                                            OnFailure="Failure"
+                                                        })
+
+<script>
+    var responseResult=false;
+    function Begin() {
+        responseResult = true;
+        setTimeout("if(responseResult){$('#waitForCurrentDate').show();}",1000);
+    }
+
+    function Complete() {
+        responseResult = true;
+        $('#waitForCurrentDate').hide();
+    }
+
+    function Failure(error) {
+        var resonse = error.responseText;
+        alert("Error Code is [" + error.ErrorCode + "] and Error Text is : " + response);
+    }
+</script>
+
+
+@*3. Working with AJAX Forms Technique*@
+
+<div>
+    @using (Ajax.BeginForm("ShowMessage", "AJAXActionLink",
+        new AjaxOptions
+        {
+            HttpMethod = "Get",
+            InsertionMode = InsertionMode.Replace,
+            UpdateTargetId = "showMessageElement"
+        }))
+    {
+        <br />@:Enter Your First Name : <input type="text" name="firstName" /><br />
+        <br />@:Enter Your Last Name  : <input type="text" name="lastName" /><br />
+        <br /><input type="submit" value="Submit" />
+    }
+</div>
+
+<div id="showMessageElement"></div>

@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{
+    var addResult = 0;
+    if (IsPost)
+    {
+        var num1 = Request["FirstNumber"];
+        var num2 = Request["SecondNumber"];
+        addResult = num1.AsInt() + num2.AsInt();
+        <h4>Addition Result is : @addResult</h4>
+    }
+}
+
+@using (Html.BeginForm("Index", "WorkingWithHTMLForms", FormMethod.Post))
+{
+    @Html.Label("FirstNumber", "Enter Your First Number : ")
+    @Html.TextBox("FirstNumber")<br />
+
+    @Html.Label("SecondNumber", "Enter Your Second Number : ")
+    @Html.TextBox("SecondNumber")<br />
+
+    <input type="submit" value="Add Two Numbers" /><br />
+}

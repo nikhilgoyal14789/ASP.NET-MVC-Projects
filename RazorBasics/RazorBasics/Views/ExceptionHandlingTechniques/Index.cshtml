@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@{ var num = 10;}
+@try
+{
+    var result = num / 0;
+}
+
+catch(Exception e)
+{
+    <h1>Exception is : @e.Message.ToString()</h1>
+}
+

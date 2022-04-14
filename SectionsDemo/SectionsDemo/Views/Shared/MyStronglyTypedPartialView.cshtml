@@ -1,0 +1,14 @@
+﻿@model IEnumerable<string>
+
+<div>
+    <h1>This is Strongly Typed Partial View</h1>
+
+    @foreach(string str in Model)
+    {
+        @*@Html.ActionLink(str + " | ", str);*@
+        
+        <ul>
+            <li>@str</li>
+        </ul>
+    }
+</div>

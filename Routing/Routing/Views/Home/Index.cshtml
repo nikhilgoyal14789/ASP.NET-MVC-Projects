@@ -1,0 +1,10 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>@ViewBag.Message</h1>
+
+@using (Html.BeginForm("Index","Home",FormMethod.Post))
+{
+    <input type="submit" value="Submit" />
+}

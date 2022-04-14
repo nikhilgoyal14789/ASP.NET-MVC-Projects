@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Conditional Statements Index</h2>
+
+@{
+    var str = "Nikhil";
+    var result = "";
+    if (str.Equals("Nikhil"))
+    {
+        result = "True";
+    }
+    else
+    {
+        result = "False";
+    }
+}
+
+<h1>Entered String is : @result</h1>
+<br />
+
+@{ var message = 48;}
+
+@if (message == 4)
+{
+    <h1>Value of Message is 4</h1>
+}
+
+else if (message == 48)
+{
+    <h1>Value of Message is 48</h1>
+}
+
+else
+{
+    <h1>Value of Message is not 4 or 48</h1>
+}
+
+
+@{
+    var res = "";
+    if (IsPost)
+    {
+        res = "The Form is Submitted using Submit Button through Post Http Request";
+    }
+    else
+    {
+        res = "This was the First Request in this Page";
+    }
+}
+
+
+@using (Html.BeginForm("Index", "ConditionalStatements", FormMethod.Post))
+{
+    <input type="submit" value="Submit" />
+    <h2>Form Result : @res @IsPost</h2>
+}

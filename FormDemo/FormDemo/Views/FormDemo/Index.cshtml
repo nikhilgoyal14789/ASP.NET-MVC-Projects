@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@*<h1>Approach 1</h1>
+
+    @{
+        Html.BeginForm("Information", "FormDemo", FormMethod.Post);}
+
+    <p>Employee Name : @Html.TextBox("empName")</p>
+
+    <p>Employee Code : @Html.TextBox("empCode")</p>
+
+    <p>Employee Add  : @Html.TextBox("empAdd")</p>
+
+    <p>Employee Pos  : @Html.TextBox("empPos")</p>
+
+    <input type="submit" value="Submit" />
+
+    @{
+        Html.EndForm();
+    }*@
+
+@*
+    <h1>Approach 2</h1>
+
+    @{
+        Html.BeginForm("Index", "FormDemo", FormMethod.Post);
+
+        @:<p>Employee Name : @Html.TextBox("empName")</p>
+
+        @:<p>Employee Code : @Html.TextBox("empCode")</p>
+
+        @:<p>Employee Add  : @Html.TextBox("empAdd")</p>
+
+        @:<p>Employee Pos  : @Html.TextBox("empPos")</p>
+
+        <input type="submit" value="Submit" />
+
+        Html.EndForm();
+    }*@
+
+@*
+    <h1>Approach 3</h1>
+
+    <p>
+        <h4>Employee Name is : @ViewBag.empName</h4>
+        <h4>Employe Code is : @ViewBag.empCode</h4>
+        <h4>Employee Add is : @ViewBag.empAdd</h4>
+        <h4>Employee Pos is : @ViewBag.empPos</h4>
+    </p>
+
+    @using (Html.BeginForm("Index", "FormDemo", FormMethod.Post))
+    {
+        @:<p>Employee Name : @Html.TextBox("empName")</p>
+        @:<p>Employee Code : @Html.TextBox("empCode")</p>
+        @:<p>Employee Add  : @Html.TextBox("empAdd")</p>
+        @:<p>Employee Pos  : @Html.TextBox("empPos")</p>
+
+        <input type="submit" value="Submit" />
+    }*@
+
+@*Working with HTML Form Controls*@
+
+<p>
+    <h4>Product Name is : @ViewBag.Product</h4>
+    <h4>Product Cost is : @ViewBag.Cost</h4>
+    <h4>Gender is : @ViewBag.Gender</h4>
+    <h4>Hobbies is : @ViewBag.Hobbies</h4>
+    <h4>State Name is : @ViewBag.State</h4>
+</p>
+
+@{
+    Html.BeginForm();
+
+    @Html.Label("Product", "Enter the Product Name");
+    @Html.TextBox("Product");
+    <br />
+
+    @Html.Label("Cost", "Enter the Product Cost");
+    @Html.TextBox("Cost");
+
+    <br />
+    @Html.Label("Gender", "Select Your Gender");<br />
+    //@Html.Label("Gender", "Male");
+    @Html.RadioButton("Gender", "Male")@:Male<br />
+    //@Html.Label("Gender", "Female");
+    @Html.RadioButton("Gender", "Female")@:Female<br />
+
+    @Html.Label("Hobbies","Enter your Hobbies")<br />
+    @Html.CheckBox("Hobbies");
+    @Html.Label("Hobbies", "Reading");<br />
+
+    @Html.CheckBox("Hobbies");
+    @Html.Label("Hobbies", "Programming");<br />
+
+    //Drop-Down List
+    @Html.Label("State", "Select Your State Name");
+    @Html.DropDownList("State", new List<SelectListItem>
+    {
+        new SelectListItem(){Text="Select Your State",Value="1",Selected=true},
+        new SelectListItem(){Text="Uttar Pradesh",Value="2",Selected=false},
+        new SelectListItem(){Text="Rajasthan",Value="3"},
+        new SelectListItem(){Text="Madhya Pradesh",Value="4"}
+    });
+
+    //You can also use ListBox inplace of DropDownList
+
+    //Submit Button 
+    <br />
+    <input type="submit" name="submit" value="Submit" />
+    <input type="reset" name="reset" value="Reset" />
+    <br />
+
+    Html.EndForm();
+}

@@ -1,0 +1,12 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<h1>This is Index View inside Project Root Controller</h1>
+
+@Html.ActionLink("Goto Admin Panel", "Index", new { area = "Admin" })
+
+@Html.ActionLink("Goto Billing Panel", "Index", new { area = "Billing" })
+
+@Html.ActionLink("Goto Customer Support Panel", "Index", new { area = "CustomerSupport" })

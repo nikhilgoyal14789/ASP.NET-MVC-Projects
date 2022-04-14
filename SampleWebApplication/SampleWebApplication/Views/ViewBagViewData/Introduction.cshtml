@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewBag.Title = "Introduction";
+}
+
+<h2>Introduction</h2>
+
+    <form method="GET" action="/ViewBagViewData/Introduction">
+        <label for="submit">Click here to know my Details : </label>
+        <button type="button" name="submit" onclick="onSubmit()">Submit</button>
+        <p id="data"></p>
+    </form>
+
+    <script>
+        function onSubmit()
+        {
+            document.getElementById("data").innerHTML = "Nikhil Goyal";
+        }
+    </script>

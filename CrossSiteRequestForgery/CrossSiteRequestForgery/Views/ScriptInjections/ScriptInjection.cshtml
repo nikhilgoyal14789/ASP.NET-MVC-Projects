@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "ScriptInjection";
+}
+
+<h2>ScriptInjection</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.Label("description", "Enter your Description or Code : ");
+    @Html.TextBox("description");
+
+    <input type="submit" value="Submit" />
+}

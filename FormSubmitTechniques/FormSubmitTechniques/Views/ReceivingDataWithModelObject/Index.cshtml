@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm("Index", "ReceivingDataWithModelObject", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @:Enter Your Id: <input type="text" name="PersonId" /><br />
+    @:Enter Your Name: <input type="text" name="PersonName" /><br />
+    @:Upload Your Image: <input type="file" name="Photo" /><br />
+    @:Enter Your City Name <input type="text" name="Address.CityName" /><br />
+    @:Enter Your State Name <input type="text" name="Address.StateName" /><br />
+    @:Enter Your Country Name <input type="text" name="Address.CountryName" /><br />
+
+
+    <input type="submit" value="Submit" /><br />
+}

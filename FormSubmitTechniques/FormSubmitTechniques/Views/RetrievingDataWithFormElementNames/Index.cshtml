@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.Label("Name", "Enter Your Name : ");<br />
+    @Html.TextBox("Name");<br /><br />
+
+    @Html.Label("CheckBox", "Enter Your Hobbies : ");<br />
+    @:Singing <input type="checkbox" name="CheckBox" value="Singing" />
+    @:Dancing <input type="checkbox" name="CheckBox" value="Dancing" />
+    @:Reading <input type="checkbox" name="CheckBox" value="Reading" />
+    @:Typing <input type="checkbox" name="CheckBox" value="Typing" /><br /><br />
+
+    @*@:Singing @Html.CheckBox("CheckBox","Singing")<br />
+        @:Reading @Html.CheckBox("CheckBox","Reading")<br />
+        @:Dancing @Html.CheckBox("CheckBox","Dancing")<br />
+        @:Typing @Html.CheckBox("CheckBox","Typing")<br /><br />*@
+    <input type="submit" value="Submit" />
+}

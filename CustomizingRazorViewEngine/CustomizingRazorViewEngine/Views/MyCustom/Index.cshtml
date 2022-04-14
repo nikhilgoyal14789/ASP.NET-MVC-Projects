@@ -1,0 +1,11 @@
+﻿@model string[]
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h2>Your Name is : </h2>
+
+@foreach(string str in Model)
+{
+    <b>@str</b>
+}

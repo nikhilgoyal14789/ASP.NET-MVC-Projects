@@ -1,0 +1,74 @@
+﻿@model ScaffHoldingTemplates.Models.Products
+
+@{
+    ViewBag.Title = "DisplayDetailedInformation";
+}
+
+<h2>DisplayDetailedInformation</h2>
+
+<div>
+    <h4>Products</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductCost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductCost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductQuantity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductQuantity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductTax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductTax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Discontinued)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Discontinued)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProductFinalPrice)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProductFinalPrice)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CategoryId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CategoryId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

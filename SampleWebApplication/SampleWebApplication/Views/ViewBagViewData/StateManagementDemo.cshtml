@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewBag.Title = "StateManagementDemo";
+}
+
+<h2>StateManagementDemo</h2>
+
+<p>
+    <h2>Employee Code is : @ViewData["Ecode"]</h2>
+    <h2>Employee Name is : @ViewData["Ename"]</h2>
+    <h2>Employee Address is : @ViewBag.Eaddress</h2>
+    <h2>Employee Country is : @TempData["Ecountry"]</h2>
+</p>
+
+@using (Html.BeginForm())
+{
+    <input type="submit" value="submit" />
+}

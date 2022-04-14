@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dictionary Controller Index</h2>
+
+@{ 
+    var dict = new Dictionary<string, string>();
+    dict.Add("Name", "Nikhil Goyal");
+    dict.Add("Section", "CSE-1");
+    dict.Add("Position", "Junior Associate IT");
+    dict.Add("Country", "India");
+}
+
+
+<div>
+    <h4>Your Name is : @dict["Name"]</h4>
+    <h4>Your Section is : @dict["Section"]</h4>
+    <h4>Your Position is : @dict["Position"]</h4>
+    <h4>Your Country is : @dict["Country"]</h4>
+</div>
+
+
+@{ 
+    dict["Section"] = "CSE-2";
+    dict["Section"] = "CSE-4";
+}
+
+<div>
+    <h4>Your Modified Section is : @dict["Section"]</h4>
+</div>
+
+

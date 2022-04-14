@@ -1,0 +1,46 @@
+﻿@model ScaffHoldingTemplates.Models.Products
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table border="1" bgColor="aqua">
+    @using (Html.BeginForm("Index", "StronglyTypedModel", FormMethod.Post))
+    {
+        <tr>
+            <td>@Html.Label("ProductName", "Enter the Product Name : ");</td>
+            <td>@Html.TextBoxFor(prod => prod.ProductName)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("ProductCost","Enter the Product Cost : ")</td>
+            <td>@Html.TextBoxFor(prod=>prod.ProductCost)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("ProductQuantity","Enter the Product Quantity : ")</td>
+            <td>@Html.TextBoxFor(prod => prod.ProductQuantity);
+        </tr>
+
+        <tr>
+            <td>@Html.Label("ProductTax", "Enter the Product Tax % : ")</td>
+            <td>@Html.TextBoxFor(prod=>prod.ProductTax)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("ProductFinalPrice","Enter the Product Final Price : ")</td>
+            <td>@Html.TextBoxFor(prod=>prod.ProductFinalPrice)</td>
+        </tr>
+
+        <tr>
+            <td>@Html.Label("CategoryId","Enter the CategoryId : ")</td>
+            <td>@Html.TextBoxFor(prod=>prod.CategoryId)</td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" value="Calculate Price"/></td>
+        </tr>
+    }
+</table>
+

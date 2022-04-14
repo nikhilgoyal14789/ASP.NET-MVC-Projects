@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Looping Statement Controller Index</h2>
+
+@*For Loop Razor Syntax*@
+
+@for (var i = 1; i <= 20; i++)
+{
+    <p>@i</p>
+}
+<br />
+@*While Loop Razor Syntax*@
+
+@{ var j = 0;}
+@while (j < 20)
+{
+    <p>@j</p>
+    j++;
+}
+
+@*For-Each Loop Razor Syntax*@
+
+@foreach (var x in Request.ServerVariables)
+{
+    <p>@x</p>
+}
+
+@* Array Razor Syntax *@
+
+@{
+    string[] array = { "A", "B", "C", "D" };
+    int aIndex = Array.IndexOf(array, "B") + 1;
+    int arrayLength = array.Length;
+    string xy = array[2 - 1];
+}
+<br /><br />
+
+<div>
+    <h4>Index of "B" element is : @aIndex</h4>
+    <h4>Array Length is : @arrayLength</h4>
+    <h4>Element at 2nd Position is : @xy</h4>
+</div>
+
+@*Switch Statement Syntax*@
+
+@{ var ch = 'D';}
+@switch (ch)
+{
+    case 'A':
+        <h2>Yes Value is A</h2>
+        break;
+
+    case 'B':
+        <h2>Yes Value is B</h2>
+        break;
+
+    default:
+        <h2>No Cases Matched</h2>
+        break;
+
+}

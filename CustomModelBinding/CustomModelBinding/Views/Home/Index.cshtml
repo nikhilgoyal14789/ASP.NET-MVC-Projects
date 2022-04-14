@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using (Html.BeginForm())
+{
+    <br /><br />
+    @:CustomerId : @Html.TextBox("CustomerId")<br />
+    @:Customer Present Address City : @Html.TextBox("pc")<br />
+    @:Customer Present Address State : @Html.TextBox("ps")<br />
+    @:Customer Present Address Country : @Html.TextBox("pco")<br />
+
+    <input type="submit" value="Submit" />
+}
